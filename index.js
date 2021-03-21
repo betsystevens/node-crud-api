@@ -27,4 +27,8 @@ app.use((err, req, res, next) => {
   res.send('500 - Server Error');
 });
 // staring the server
-app.listen(port, () => console.log(`Server started, listening port: ${port}`));
+app.listen(port, () =>
+  console.log(
+    `Server started, listening port: ${port}; ` + `press Ctrl-C to terminate.`
+  )
+);

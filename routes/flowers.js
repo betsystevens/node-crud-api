@@ -1,6 +1,7 @@
-const express = require('express'),
-  router = express.Router(),
-  db = require('../models/dbConnection');
+const express = require('express');
+const router = express.Router();
+const db = require('../models/dbConnection');
+
 // get flowers lists
 router.get('/list', function(req, res) {
   let sql = `SELECT * FROM flowers`;
