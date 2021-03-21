@@ -17,7 +17,8 @@ router.get('/list', function(req, res) {
 // create new flower
 router.post('/new', function(req, res) {
   let sql = `INSERT INTO flowers(flower, variety, container) VALUES(?)`;
-  let values = [req.body.flower, req.body.variety, req.body.container];
+  // let values = [req.body.flower, req.body.variety, req.body.container];
+  let values = [req.query.flower, req.query.variety, req.query.container];
   db.query(sql, [values], function(err, data, fields) {
     if (err) throw err;
     res.json({

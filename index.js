@@ -1,6 +1,5 @@
 const express = require('express'),
   app = express(),
-  // mysql = require('mysql'),
   cors = require('cors');
 
 var server = {
@@ -11,7 +10,7 @@ const flowersRouter = require('./routes/flowers');
 // use the modules
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// app.use(express.json());
 //use router
 app.use('/flowers', flowersRouter);
 // staring the server
