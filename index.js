@@ -1,10 +1,8 @@
-const express = require('express'),
-  app = express(),
-  cors = require('cors');
+const express = require('express');
+const app = express();
+const cors = require('cors');
 
-var server = {
-  port: 4040,
-};
+const port = process.env.PORT || 4040;
 // routers
 const flowersRouter = require('./routes/flowers');
 // use the modules
@@ -14,6 +12,4 @@ app.use(express.urlencoded({ extended: true }));
 //use router
 app.use('/flowers', flowersRouter);
 // staring the server
-app.listen(server.port, () =>
-  console.log(`Server started, listening port: ${server.port}`)
-);
+app.listen(port, () => console.log(`Server started, listening port: ${port}`));
