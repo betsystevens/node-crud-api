@@ -4,6 +4,7 @@ const db = require('../models/dbConnection');
 
 // get flowers lists
 router.get('/list', function(req, res) {
+  console.log('hello from list flowers');
   let sql = `SELECT * FROM flowers`;
   db.query(sql, function(err, data, fields) {
     if (err) throw err;
@@ -17,6 +18,9 @@ router.get('/list', function(req, res) {
 
 // create new flower
 router.post('/new', function(req, res) {
+  // router.get('/new', function(req, res) {
+  console.log('hello from new flower');
+  // console.log(req.query.flower);
   let sql = `INSERT INTO flowers(flower, variety, container) VALUES(?)`;
   // let values = [req.body.flower, req.body.variety, req.body.container];
   let values = [req.query.flower, req.query.variety, req.query.container];

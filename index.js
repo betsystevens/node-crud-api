@@ -1,5 +1,4 @@
 const express = require('express');
-const expressHandlebars = require('express-handlebars');
 const app = express();
 const cors = require('cors');
 
@@ -8,14 +7,6 @@ const port = process.env.PORT || 4040;
 // routers
 const flowersRouter = require('./routes/flowers');
 
-app.engine(
-  'handlebars',
-  expressHandlebars({
-    defaultLayout: 'main',
-  })
-);
-app.set('view engine', handlebars);
-// use the modules
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
