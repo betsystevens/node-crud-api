@@ -2,9 +2,8 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/dbConnection');
 
-// get flowers lists
+// get get all rows from the flowers table
 router.get('/list', function(req, res) {
-  console.log('hello from list flowers');
   let sql = `SELECT * FROM flowers`;
   db.query(sql, function(err, data, fields) {
     if (err) throw err;
