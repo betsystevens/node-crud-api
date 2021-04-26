@@ -1,0 +1,13 @@
+input,
+button {
+  border-radius: 8px;
+  border-style: inset;
+  padding: 8px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
