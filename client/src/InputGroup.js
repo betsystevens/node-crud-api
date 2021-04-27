@@ -6,11 +6,11 @@ const inputGroupStyle = {
   margin: '20px',
 };
 
-export default function InputGroup({ label, size }) {
+export default function InputGroup(props) {
   return (
     <div style={inputGroupStyle}>
-      <label> {label} </label>
-      <input size={size}></input>
+      <label htmlFor={props.name}> {props.label} </label>
+      <input {...props} onChange={(e) => console.log(e.target.value)}></input>
     </div>
   );
 }
